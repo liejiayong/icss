@@ -1,0 +1,26 @@
+/* 
+  Summary css tool for scss
+*/
+// 三角形切角 @include beveled-corners(#58a, 15px, 5px);
+@mixin beveled-corners($bg, $tl: 0, $tr: $tl, $br: $tl, $bl: $tr) {
+  background: $bg;
+  background: linear-gradient(135deg, transparent $tl, $bg 0) top left, linear-gradient(225deg, transparent $tr, $bg 0) top right, linear-gradient(-45deg, transparent $br, $bg 0) bottom right,
+    linear-gradient(45deg, transparent $bl, $bg 0) bottom left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+}
+// 波点 @include polka(30px, 30%, #655, tan);
+@mixin polka($size, $dot, $base, $accent) {
+  background: $base;
+  background-image: radial-gradient($accent $dot, transparent 0), radial-gradient($accent $dot, transparent 0);
+  background-size: $size $size;
+  background-position: 0 0, $size/2 $size/2;
+}
+
+// 棋盘 @include checkerboard(15px, #58a, tan);
+@mixin checkerboard($size, $base, $accent: rgba(0, 0, 0, 0.25)) {
+  background: $base;
+  background-image: linear-gradient(45deg, $accent 25%, transparent 0, transparent 75%, $accent 0), linear-gradient(45deg, $accent 25%, transparent 0, transparent 75%, $accent 0);
+  background-position: 0 0, $size $size;
+  background-size: 2 * $size 2 * $size;
+}

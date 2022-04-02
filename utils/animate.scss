@@ -1,0 +1,74 @@
+// 抖音字效
+@-webkit-keyframes uk-text-shadow-glitch {
+  0% {
+    text-shadow: none;
+  }
+  25% {
+    text-shadow: -1px -1px 0 #ff0048, 1px 1px 0 #3234ff;
+  }
+  50% {
+    text-shadow: 1px -1px 0 #ff0048, -1px 1px 0 #3234ff;
+  }
+  75% {
+    text-shadow: -1px 1px 0 #ff0048, 1px -1px 0 #3234ff;
+  }
+  to {
+    text-shadow: 1px 1px 0 #ff0048, -1px -1px 0 #3234ff;
+  }
+}
+@keyframes uk-text-shadow-glitch {
+  0% {
+    text-shadow: none;
+  }
+  25% {
+    text-shadow: -1px -1px 0 #ff0048, 1px 1px 0 #3234ff;
+  }
+  50% {
+    text-shadow: 1px -1px 0 #ff0048, -1px 1px 0 #3234ff;
+  }
+  75% {
+    text-shadow: -1px 1px 0 #ff0048, 1px -1px 0 #3234ff;
+  }
+  to {
+    text-shadow: 1px 1px 0 #ff0048, -1px -1px 0 #3234ff;
+  }
+}
+
+.anim-txt[alt='shake'] {
+  -webkit-animation: uk-text-shadow-glitch 0.95s cubic-bezier(1, -1.91, 0, 2.79) 0s infinite normal both running;
+  animation: uk-text-shadow-glitch 0.95s cubic-bezier(0.93, -0.32, 0, 1.71) 0s infinite normal both running;
+}
+
+// 彩虹变换字体特效
+@-webkit-keyframes rainbowan {
+  to {
+    background-position: -2000vw;
+  }
+}
+@keyframes rainbowan {
+  to {
+    background-position: -2000vw;
+  }
+}
+.anim-rainbox[alt='rainbow'],
+.anim-rainbox[alt='rainbow'] * {
+  padding-top: 3px;
+  background-image: linear-gradient(
+    to left,
+    orangered,
+    orange,
+    gold,
+    lightgreen,
+    cyan,
+    dodgerblue,
+    mediumpurple,
+    hotpink,
+    orangered
+  );
+  background-size: 110vw;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-animation: rainbowan 60s linear infinite;
+  animation: rainbowan 60s linear infinite;
+}
